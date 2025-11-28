@@ -1,26 +1,18 @@
 public class Operacao {
 
-    private char tipo;
+    private TipoOperacao tipo;
     private double valor;
 
-    public Operacao(char tipo, double valor) {
+    public Operacao(TipoOperacao tipo, double valor) {
         this.tipo = tipo;
         this.valor = valor;
     }
 
-    // TODO(#6) REFATORAR: Muita responsabilidade para mesma classe
-    public String getTipo() {
-        switch (this.tipo) {
-            case 'd':
-                return "Depósito";
-            case 's':
-                return "Saque";
-            default:
-                return null;
-        }
+    public TipoOperacao getTipo() {
+        return tipo;
     }
 
-    public String toString() {
-        return this.getTipo() + ":\t" + this.valor;
+    public double getValor() {
+        return valor;
     }
 }
